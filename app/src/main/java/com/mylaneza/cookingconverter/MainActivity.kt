@@ -11,14 +11,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         /* Metric System Unit Spinner */
-        val metricSystemUnitList = listOf("cm","m","km")
+        val metricSystemUnitList = listOf("ml" ,"g")
         val adapter =  ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line,metricSystemUnitList)
         val metricUnitsSpinner = findViewById<Spinner>(R.id.metric_system_unit)
         metricUnitsSpinner.adapter = adapter
 
         /* Imperial System Unit Spinner */
 
-        val imperialSystemUnitList = listOf("mi","ft" , "in")
+        val imperialSystemUnitList = listOf("spoon","cup" ,"ounces")
         val adapter2 = ArrayAdapter(this,android.R.layout.simple_dropdown_item_1line,imperialSystemUnitList)
         val imperialUnitsSpinner = findViewById<Spinner>(R.id.imperial_system_unit)
         imperialUnitsSpinner.adapter = adapter2
