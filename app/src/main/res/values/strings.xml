@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Cooking Converter</string>
+    <string name="metrical_system">Metrical System</string>
+    <string name="imperial_system">Imperial System</string>
+    <string name="convert">Convert</string>
+    <string name="choose_metric_system_unit">Choose Metric System Unit</string>
+    <string name="choose_imperial_system_unit">Choose Imperial System Unit</string>
+    <string name="left_to_right">Left To Right</string>
+</resources>
