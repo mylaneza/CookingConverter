@@ -6,4 +6,6 @@
     <string name="choose_metric_system_unit">Choose Metric System Unit</string>
     <string name="choose_imperial_system_unit">Choose Imperial System Unit</string>
     <string name="left_to_right">Left To Right</string>
+    <string name="right_to_left">Right To Left</string>
+    <string name="value">%s</string>
 </resources>
