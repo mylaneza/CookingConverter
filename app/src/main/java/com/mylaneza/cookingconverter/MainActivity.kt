@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         /* Imperial System Units */
         const val SPOON = "tsp"
-        const val CUP = "c";
+        const val CUP = "c"
         const val OUNCE = "oz"
 
     }
@@ -39,8 +39,8 @@ class MainActivity : AppCompatActivity() {
     private val metricSystemUnitList = listOf( MILILITTER ,GRAMS)
     private val imperialSystemUnitList = listOf(SPOON, CUP , OUNCE)
 
-    private lateinit var leftToRight : String;
-    private lateinit var rightToLeft : String;
+    private lateinit var leftToRight : String
+    private lateinit var rightToLeft : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,10 +85,10 @@ class MainActivity : AppCompatActivity() {
      */
     private fun convertUnits() {
         if(binding.sideConvertionButton.text.toString().equals(leftToRight)){
-            val metricValue = binding.metricalSystemText.text.toString().toDoubleOrNull()
+            val metricValue = binding.metricalSystemTextEdit.text.toString().toDoubleOrNull()
             if( metricValue == null ){
                 Snackbar.make(binding.root,"Metric Value missing.",Snackbar.LENGTH_SHORT).show()
-                binding.imperialSystemText.setText("")
+                binding.imperialSystemTextEdit.setText("")
                 return
             }
 
@@ -112,13 +112,13 @@ class MainActivity : AppCompatActivity() {
                 else -> 0.0
             }
 
-            binding.imperialSystemText.setText( getString(R.string.value,NumberFormat.getInstance().format(metricValue * convertedFactor)))
+            binding.imperialSystemTextEdit.setText( getString(R.string.value,NumberFormat.getInstance().format(metricValue * convertedFactor)))
         }
         else {
-            val imperialValue = binding.imperialSystemText.text.toString().toDoubleOrNull()
+            val imperialValue = binding.imperialSystemTextEdit.text.toString().toDoubleOrNull()
             if( imperialValue == null){
                 Snackbar.make(binding.root,"Imperial Value missing.",Snackbar.LENGTH_SHORT).show()
-                binding.metricalSystemText.setText("")
+                binding.metricalSystemTextEdit.setText("")
                 return
             }
 
@@ -146,7 +146,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 else -> 0.0
             }
-            binding.metricalSystemText.setText( getString(R.string.value,NumberFormat.getInstance().format(imperialValue * convertedFactor)))
+            binding.metricalSystemTextEdit.setText( getString(R.string.value,NumberFormat.getInstance().format(imperialValue * convertedFactor)))
         }
     }
 
