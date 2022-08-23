@@ -7,5 +7,7 @@
     <string name="choose_imperial_system_unit">Choose Imperial System Unit</string>
     <string name="left_to_right">Left To Right</string>
     <string name="right_to_left">Right To Left</string>
+    <string name="up_to_down">MtoI</string>
+    <string name="down_to_up">IToM</string>
     <string name="value">%s</string>
 </resources>

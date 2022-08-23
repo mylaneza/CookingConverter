@@ -39,13 +39,15 @@ class MainActivity : AppCompatActivity() {
     private val metricSystemUnitList = listOf( MILILITTER ,GRAMS)
     private val imperialSystemUnitList = listOf(SPOON, CUP , OUNCE)
 
-    private lateinit var leftToRight : String
-    private lateinit var rightToLeft : String
+    private lateinit var upToDown : String
+    private lateinit var downToUp : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        leftToRight = getString(R.string.left_to_right)
-        rightToLeft = getString(R.string.right_to_left)
+        upToDown = getString(R.string.up_to_down)
+        downToUp = getString(R.string.down_to_up)
+
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -66,10 +68,13 @@ class MainActivity : AppCompatActivity() {
      * Changes the side to convert
      */
     private fun changeSideToConvert() {
-        if(binding.sideConvertionButton.text.toString().equals(leftToRight))
-            binding.sideConvertionButton.text = rightToLeft
-        else
-            binding.sideConvertionButton.text = leftToRight
+
+        if(binding.sideConvertionButton.text.toString().equals(downToUp)) {
+            binding.sideConvertionButton.text = upToDown
+
+        }else {
+            binding.sideConvertionButton.text = downToUp
+        }
     }
 
     /**
@@ -84,7 +89,7 @@ class MainActivity : AppCompatActivity() {
      * Makes the convertion of the cooking units
      */
     private fun convertUnits() {
-        if(binding.sideConvertionButton.text.toString().equals(leftToRight)){
+        if(binding.sideConvertionButton.text.toString().equals(upToDown)){
             val metricValue = binding.metricalSystemTextEdit.text.toString().toDoubleOrNull()
             if( metricValue == null ){
                 Snackbar.make(binding.root,"Metric Value missing.",Snackbar.LENGTH_SHORT).show()
